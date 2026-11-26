@@ -2,6 +2,8 @@ package hu.gyak.beadando.entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "message")
 public class Message {
@@ -15,6 +17,8 @@ public class Message {
     private String subject;
     @Column(nullable = false)
     private String content;
+    @Column(nullable = false)
+    private LocalDateTime dateTime;
 
     public Message() {
     }
@@ -28,6 +32,10 @@ public class Message {
         this.user = user;
         this.subject = subject;
         this.content = content;
+    }
+
+    public Long getId() {
+        return Id;
     }
 
     public User getUser() {
@@ -52,5 +60,13 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 }
