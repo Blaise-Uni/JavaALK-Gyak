@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-
+security">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+</head>
+<body>
+<div th:replace="~{menu :: menu}"></div>
+<hr>
+<h1>Contact someone</h1>
+<div th:if="${param.messageSent}" style="color: green;">Message sent!</div>
+<p th:if="${error}" th:text="${error}" style="color: red"></p>
+<form th:action="@{/contact}" method="post">
+    <label>Username:</label><input type="text" name="username" required><br>
+    <label>Subject:</label><input type="text" name="subject" ><br>
+    <label>Content:</label> <br>
+    <textarea name="content" rows="8" cols="50" required></textarea> <br>
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>
