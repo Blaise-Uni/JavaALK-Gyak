@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Driver</title>
+</head>
+<body>
+<h1>Add new driver</h1>
+<br/>
+<form action="#" th:action="@{/crud/create}"th:object="${driver}" method="post">
+    <p><input type="text" th:field="*{name}"placeholder="Name required"/> </p>
+    <p><input type="text" th:field="*{gender}"placeholder="Gender required"/> </p>
+    <p><input type="date" th:field="*{dateOfBirth}"placeholder="Date of birth required"/> </p>
+    <p><input type=text th:field="*{nationality}"placeholder="Nationaility required"/> </p>
+    <p><input type="submit" value="Create" /></p>
+</form>
+</body>
+</html>

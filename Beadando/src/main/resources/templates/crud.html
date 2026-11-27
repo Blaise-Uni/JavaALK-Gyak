@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver CRUD</title>
+</head>
+<body>
+<div th:replace="~{menu :: menu}"></div>
+<hr>
+<h1>Drivers</h1>
+<a th:href="@{'/crud/create'}">Add new driver</a>
+<br/>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th>Nationality</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="driver: ${drivers}">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.name}"></td>
+        <td th:text="${driver.gender}"></td>
+        <td th:text="${driver.dateOfBirth}"></td>
+        <td th:text="${driver.nationality}"></td>
+        <td>
+            <a th:href="@{'/crud/edit/'+${driver.id}}">Edit</a>
+            &nbsp;
+            <a th:href="@{'/crud/delete/'+${driver.id}}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

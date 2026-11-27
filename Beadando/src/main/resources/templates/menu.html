@@ -9,6 +9,7 @@
     <span sec:authorize="hasRole('ADMIN')"> | <a th:href="@{/admin}">Admin</a></span>
     <span sec:authorize="isAnonymous()"> | <a th:href="@{/login}">Login</a> |
         <a th:href="@{/register}">Register</a> </span>
+    <span sec:authorize="hasRole('ADMIN')"> | <a th:href="@{/crud}">DriverCRUD</a></span>
     <span sec:authorize="isAuthenticated()"> |
         <form th:action="@{/logout}" method="post" style="display: inline">
             <button type="submit">Logout</button>
