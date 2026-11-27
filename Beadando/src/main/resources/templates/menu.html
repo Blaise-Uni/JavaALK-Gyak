@@ -4,7 +4,7 @@
 <nav th:fragment="menu">
     <a th:href="@{/}">Home</a>
     <span sec:authorize="isAuthenticated()"> | <a th:href="@{/user}">User</a></span>
-    <span> | <a th:href="@{/contact}">Contact</a></span>
+    <span> | <a th:href="@{/contact}">Contact</a> | <a th:href="@{/database}">Database</a></span>
     <span sec:authorize="hasRole('USER')"> | <a th:href="@{/messages}">Messages</a></span>
     <span sec:authorize="hasRole('ADMIN')"> | <a th:href="@{/admin}">Admin</a></span>
     <span sec:authorize="isAnonymous()"> | <a th:href="@{/login}">Login</a> |
